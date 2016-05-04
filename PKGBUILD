@@ -28,6 +28,6 @@ prepare() {
 }
 
 package() {
-    install -Dm755 usr/bin/$pkgname "$pkgdir"/usr/bin/$pkgname
-    install -Dm644 usr/share/$pkgname/curl-ca-bundle.crt "$pkgdir"/usr/share/$pkgname/curl-ca-bundle.crt
+  install -Dm644 {,"$pkgdir"/}usr/share/$pkgname/curl-ca-bundle.crt
+  install -Dm755 {,"$pkgdir"/}usr/bin/$pkgname
 }
