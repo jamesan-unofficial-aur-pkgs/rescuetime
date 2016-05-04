@@ -1,7 +1,7 @@
 pkgbase = rescuetime
 	pkgdesc = Application time-tracking for Linux. Stable version
 	pkgver = 2.9.10.1255
-	pkgrel = 2
+	pkgrel = 3
 	url = https://www.rescuetime.com
 	install = rescuetime.install
 	changelog = rescuetime.changelog
