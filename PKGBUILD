@@ -4,7 +4,7 @@
 
 pkgname=rescuetime
 pkgver=2.9.10.1255
-pkgrel=1
+pkgrel=2
 pkgdesc="Application time-tracking for Linux. Stable version"
 arch=(i686 x86_64)
 url=https://www.rescuetime.com
@@ -13,17 +13,10 @@ depends=(qt4 xorg-xprop xprintidle)
 conflicts=($pkgname-beta)
 install=$pkgname.install
 changelog=$pkgname.changelog
-
-if [[ $CARCH == "x86_64" ]]
-then
-    _suffix=amd64
-md5sums=('bd81f31fbb13a5b73ac5bf41bbf243f6')
-else
-    _suffix=i386
-md5sums=('79ef7170b5e047712751fa769fd21465')
-fi
-
-source=($url/installers/rescuetime_current_$_suffix.deb)
+source_i686=("$url/installers/${pkgname}_current_i386.deb")
+source_x86_64=("$url/installers/${pkgname}_current_amd64.deb")
+md5sums_i686=('79ef7170b5e047712751fa769fd21465')
+md5sums_x86_64=('bd81f31fbb13a5b73ac5bf41bbf243f6')
 
 package() {
     bsdtar -xf data.tar.gz
